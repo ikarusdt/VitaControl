@@ -32,7 +32,6 @@ target_link_libraries(${PROJECT_NAME}
   SceThreadmgrForDriver_stub
   taihenForKernel_stub
   ScePower_stub 
-  SceKernelSuspendForDriver_stub 
 )
 
 set_target_properties(${PROJECT_NAME}
