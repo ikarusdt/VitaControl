@@ -6,7 +6,7 @@
 #include <psp2kern/ctrl.h>
 #include <psp2kern/kernel/modulemgr.h>
 #include <psp2kern/kernel/threadmgr.h>
-#include <psp2/power.h> 
+#include <psp2kern/kernel/suspend.h>
 
 #include "controller.h"
 #include "mempool.h"
