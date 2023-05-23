@@ -6,6 +6,8 @@
 #include <psp2kern/ctrl.h>
 #include <psp2kern/kernel/modulemgr.h>
 #include <psp2kern/kernel/threadmgr.h>
+#include <psp2kern/kernel/suspend.h> 
+#include <psp2/power.h> 
 
 #include "controller.h"
 #include "mempool.h"
@@ -290,6 +292,9 @@ static int bluetoothCallback(int notifyId, int notifyCount, int notifyArg, void 
             break;
 
         case 0x0A: // Reply to read request
+            //prevent suspend and display off
+            ksceKernelPowerTick(SCE_KERNEL_POWER_TICK_DISABLE_AUTO_SUSPEND);
+            scePowerRequestDisplayOn();
             // Process the received input report and request another
             if (controllers[cont])
             {
